@@ -1,0 +1,23 @@
+spring:
+  main:
+    banner-mode: off
+  application:
+    name: unified-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/dexterautonomy/service-configurations
+          clone-on-start: true
+          default-label: main
+  security:
+    basic:
+      enabled: false
+      path: /**
+    ignored: /health**,/info**,/metrics**,/trace**
+    user:
+      name: hingebridge
+      password: admin
+      roles: manager
+server:
+  port: 9199
