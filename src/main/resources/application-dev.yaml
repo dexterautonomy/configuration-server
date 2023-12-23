@@ -16,8 +16,8 @@ spring:
       path: /**
     ignored: /health**,/info**,/metrics**,/trace**
     user:
-      name: hingebridge
-      password: admin
+      name: ${CONFIG_SERVER_USERNAME}
+      password: ${CONFIG_SERVER_PASSWORD}
       roles: manager
 server:
   port: 9199
